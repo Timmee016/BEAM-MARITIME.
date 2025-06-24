@@ -27,7 +27,7 @@ toggleBtn.addEventListener('click', () => {
 
 
 // ======= Navbar Background on Scroll =======
-const navbar = document.querySelector('.navbar');
+const navbar = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
