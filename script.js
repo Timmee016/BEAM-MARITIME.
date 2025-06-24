@@ -1,76 +1,42 @@
-// ======= Contact Form Submission (basic simulation) =======
-const form = document.querySelector('.contact-form');
+document.addEventListener("DOMContentLoaded", function () {
+    // === Contact Form Submission (basic simulation) ===
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const message = form.querySelector('textarea').value.trim();
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent actual form submission
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
 
-    const name = form.querySelector('input[type="text"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const message = form.querySelector('textarea').value.trim();
-
-    if (!name || !email || !message) {
-        alert('Please fill in all fields.');
-        return;
+            alert(`Thank you, ${name}! Your message has been sent.`);
+            form.reset();
+        });
     }
 
-    alert(`Thank you, ${name}! Your message has been sent.`);
-    form.reset();
-});
-
-// ======= Navbar Toggle =======
-const toggleBtn = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-
-// ======= Navbar Background on Scroll =======
-const navbar = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    // === Navbar Background on Scroll ===
+    const navbar = document.querySelector('.header');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
     }
-});
 
+    // === Fade-in Animations on Scroll ===
+    const fadeElements = document.querySelectorAll('.fade-in');
 
-// Animate icons on scroll into view
-const faders = document.querySelectorAll('.social-icons a');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
 
-const appearOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    fader.classList.add('fade-in-up');
-    appearOnScroll.observe(fader);
-});
-
-// Scroll-in animation for .fade-in elements
-const serviceCards = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // remove after animation
-        }
-    });
-}, { threshold: 0.1 });
-
-serviceCards.forEach(card => {
-    observer.observe(card);
+    fadeElements.forEach(el => observer.observe(el));
 });
