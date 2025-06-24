@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,25 +16,61 @@
       color: #222;
     }
 
-    header, footer {
-      background-color: #4169E1;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    /* Navbar Styling */
+    nav {
+      background-color: powderblue;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
+    .navbar-brand img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      padding: 4px;
+      border-radius: 6px;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-nav .nav-link {
+      color: #003366;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+      color: #000;
+    }
+
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* Hero Section */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://img.freepik.com/free-photo/industrial-port-container-yard_335224-911.jpg');
       background-size: cover;
       background-position: center;
       padding: 100px 20px;
       text-align: center;
-      color: #40E0D0;
+      color: #ffffff;
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #e0f7fa;
     }
 
     .content-section {
@@ -65,6 +100,14 @@
       background-color: #2ab7b1;
     }
 
+    footer {
+      background: linear-gradient(135deg, #00b4d8, #8338ec);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2rem;
@@ -73,34 +116,65 @@
       .content-section {
         padding: 20px;
       }
+
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-nav .nav-item {
+        margin-bottom: 0.5rem;
+      }
     }
   </style>
 </head>
 
 <body>
-<header>
-    <img src="images/BEAM maritime.jpg" alt="Beam Maritime Logo">
-  </header>
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/BEAM maritime.jpg" alt="Beam Maritime Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="enquiries.html">Enquiries</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Project Cargo</h1>
     <p>Specialized handling of heavy and oversized shipments</p>
   </section>
 
+  <!-- Content Section -->
   <section class="content-section">
     <h2>What We Offer</h2>
     <p>
-      Our Project Cargo services are designed for complex logistics operations involving oversized or heavy equipment. From planning to final delivery, we coordinate multimodal transportation, equipment sourcing, and site surveys.
+      Our Project Cargo services are designed for complex logistics operations involving oversized or heavy equipment.
+      From planning to final delivery, we coordinate multimodal transportation, equipment sourcing, and site surveys.
     </p>
     <p>
-      Beam Maritime ensures compliance, safety, and efficiency throughout the project cargo journey, no matter how remote or challenging the destination.
+      Beam Maritime ensures compliance, safety, and efficiency throughout the project cargo journey, no matter how
+      remote or challenging the destination.
     </p>
     <a href="get-a-quote.html" class="cta-btn">Request a Quote</a>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Beam Maritime. All rights reserved.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
