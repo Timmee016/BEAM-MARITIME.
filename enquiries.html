@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enquiries – Beam Maritime</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="header">
+        <img src="BEAM_MARITIME_Logo.png" alt="Beam Maritime Logo" />
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="enquiries.html">Enquiries</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <section class="enquiry-form-section fade-in-up">
+        <h1>Make an Enquiry</h1>
+        <form class="contact-form" aria-label="Enquiry form">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" type="text" placeholder="Enter your name" required />
+
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="Enter your email" required />
+
+            <label for="company">Company Name</label>
+            <input id="company" type="text" placeholder="Company name" required />
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" placeholder="Phone number" required />
+
+            <label for="message">Your Enquiry</label>
+            <textarea id="message" placeholder="What would you like to know?" rows="5" required></textarea>
+
+            <button type="submit" class="btn-pulse">Submit Enquiry</button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.fade-in-up').classList.add('visible');
+        });
+    </script>
+</body>
+
