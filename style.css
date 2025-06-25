@@ -89,7 +89,7 @@ body {
     transform: translateY(0);
 }
 
-.logo-container img {
+/*.logo-container img {
   height: 60px;
   background-color: powderblue; 
   padding: 8px;
@@ -99,15 +99,95 @@ body {
 
 
 nav {
-  background-color: white;
+  background-color: ;
   padding: 0.5rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo styling */
+/* Logo styling 
 .logo-container img {
   height: 100px;
   width: auto;
+}
+
+/* Navbar links 
+.navbar-nav .nav-link {
+  color: #003366;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #000;
+}
+
+/* Dropdown menu 
+
+
+.dropdown-menu {
+  background-color: #e0f7ff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+  color: #003366;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: #bde0ff;
+  color: #000;
+}
+
+/* Toggler customization 
+.navbar-toggler {
+  border-color: rgba(0,0,0,0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsive fix for logo and nav items on small screens 
+@media (max-width: 767.98px) {
+  .logo-container {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 0.25rem;
+  }
+}*/
+/* LOGO Styling: Clean and always left-aligned */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 70px;
+  width: auto;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+
+/* Navbar base */
+nav {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar links */
@@ -140,7 +220,7 @@ nav {
   color: #000;
 }
 
-/* Toggler customization */
+/* Navbar Toggler */
 .navbar-toggler {
   border-color: rgba(0,0,0,0.1);
 }
@@ -149,20 +229,29 @@ nav {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Responsive fix for logo and nav items on small screens */
+/* Mobile responsiveness — logo stays on the left */
 @media (max-width: 767.98px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
   .logo-container {
-    text-align: center;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .navbar-collapse {
     width: 100%;
-    margin-bottom: 0.5rem;
+    justify-content: flex-end;
   }
 
   .navbar-nav {
-    text-align: center;
+    width: 100%;
+    text-align: right;
   }
 
   .navbar-nav .nav-item {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 }
 
