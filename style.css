@@ -353,8 +353,8 @@ nav {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #00b4d8, #8338ec);
-    color: #fff;
+    background: #00b4d8;
+    color: #fff
     text-align: center;
     padding: 2.5rem 1rem;
 }
